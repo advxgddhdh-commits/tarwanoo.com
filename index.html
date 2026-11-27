@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>try{if(localStorage.getItem("tarwanoo_lang")==="ar"){document.documentElement.lang="ar";document.documentElement.dir="rtl"}}catch(e){}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E">
 <title>Tarwanoo.com — Jouets &amp; accessoires, livrés partout au Maroc</title>
 <meta name="description" content="Boutique en ligne de jouets, accessoires, gaming et idées cadeaux. Livraison partout au Maroc, paiement à la livraison, commande simple via WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.143.0/build/three.module.js","three/examples/jsm/":"https://unpkg.com/three@0.143.0/examples/jsm/"}}</script>
 <style>
 :root{--bg:#04060f;--bg-2:#060a18;--ink:#f3f6ff;--muted:#9aa6c4;--muted-2:#6b7796;--line:rgba(150,175,230,.12);--line-strong:rgba(150,175,230,.22);--accent:#5df0a8;--accent-2:#2fd38a;--accent-ink:#032018;--warm:#ffd27a;--danger:#ff6b81;--glass:rgba(12,18,38,.6);--glass-2:rgba(16,24,48,.72);--radius:18px;--radius-lg:26px;--maxw:1180px;--shadow:0 30px 80px -30px rgba(0,0,0,.75);--font:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif}
@@ -341,6 +342,44 @@ body{background:radial-gradient(120% 70% at 50% 0%,#0b1a45 0%,var(--bg) 62%)}
 :root{--glass:rgba(12,18,38,.44);--glass-2:rgba(16,24,48,.58)}
 .card,.step,.cat-card,.pcard,.faq details,.tab,.search input,.toolbar select{backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
 }
+
+/* ===== langue, visuels produits, RTL ===== */
+.vright{display:flex;align-items:center;gap:8px;justify-self:end}
+.langbtn{padding:0 14px}
+.langbtn .ic,.sn-lang .ic{width:17px;height:17px}
+.sn-right{display:flex;align-items:center;gap:10px}
+.sn-lang{display:inline-flex;align-items:center;gap:7px;cursor:pointer;font-weight:600;font-size:13.5px;padding:9px 14px;border-radius:999px;background:transparent;border:1px solid var(--line-strong);transition:background .2s}
+.sn-lang:hover{background:rgba(255,255,255,.1)}
+.art{width:74%;height:auto;aspect-ratio:1;display:block;filter:drop-shadow(0 12px 16px rgba(0,0,0,.35));transition:transform .35s}
+.pcard:hover .art{transform:scale(1.08) rotate(-3deg)}
+.ci-tile .art{width:90%;filter:none}
+.qv-tile .art{width:78%;max-width:320px}
+html[lang=ar] body,html[lang=ar] .vhero,html[lang=ar] input,html[lang=ar] textarea,html[lang=ar] select,html[lang=ar] button{font-family:'Cairo','Inter',system-ui,sans-serif}
+html[lang=ar] *{letter-spacing:0!important}
+html[lang=ar] .vh1{line-height:1.3}
+html[lang=ar] .headline-line{padding:.1em .15em .25em}
+html[lang=ar] .vh1 em{font-family:'Cairo',serif;font-style:normal;font-weight:700;font-size:1em}
+html[lang=ar] .section-head h2,html[lang=ar] .promo h2,html[lang=ar] .cta-card h2{line-height:1.3}
+html[lang=ar] .eyebrow{text-transform:none}
+[dir=rtl] .search .ic{left:auto;right:15px}
+[dir=rtl] .search input{padding-left:15px;padding-right:44px}
+[dir=rtl] .drawer{right:auto;left:0;border-left:0;border-right:1px solid var(--line-strong);transform:translateX(-100%)}
+[dir=rtl] .drawer.on{transform:none}
+[dir=rtl] .ci-right{text-align:left}
+[dir=rtl] .del{margin:10px auto 0 0}
+[dir=rtl] .badge{left:auto;right:12px}
+[dir=rtl] .cat-card{text-align:right}
+[dir=rtl] .cat-emoji{right:auto;left:20px}
+[dir=rtl] .qv-x{right:auto;left:14px}
+[dir=rtl] .ic.ar{transform:scaleX(-1)}
+[dir=rtl] input[type=tel]{direction:ltr;text-align:right}
+[dir=rtl] .qv-points li::before{margin-right:0;margin-left:9px}
+[dir=rtl] #tDisc{direction:ltr;unicode-bidi:isolate}
+@media(max-width:900px){.vheader{grid-template-columns:1fr auto}.vright{position:relative;z-index:80}.langbtn{height:42px}}
+@media(max-width:560px){.langbtn .lang-txt,.sn-lang .lang-txt{display:none}.langbtn{padding:0 12px}.sn-lang{padding:9px 11px}}
+@media(max-width:560px){.vheader{gap:6px}.vlogo{font-size:15px;gap:7px;min-width:0}.vlogo svg{width:20px;height:20px}.vright{gap:6px}.vright .vcta{padding:0 11px;gap:6px;font-size:14px}.burger{width:40px;height:40px}.langbtn{height:40px;width:40px;padding:0}.vright .vcta{height:40px}}
+@media(max-width:360px){.vlogo{font-size:14px}.vright .vcta .ic{display:none}}
+.search .ic{color:var(--muted)}
 </style>
 </head>
 <body>
@@ -358,12 +397,130 @@ body{background:radial-gradient(120% 70% at 50% 0%,#0b1a45 0%,var(--bg) 62%)}
 <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
 <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
 <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3 4.5 6 4.5 9.5s-1.5 6.500-4.5 9.500c-3-3-4.500-6-4.500-9.500S9 5.500 12 2.500Z"/></symbol>
+
+<symbol id="a-1" viewBox="0 0 200 200"><defs><linearGradient id="gA1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a6b"/><stop offset="1" stop-color="#c8283d"/></linearGradient></defs>
+<ellipse cx="100" cy="172" rx="76" ry="8" fill="#000" opacity=".3"/>
+<path d="M44 108 L62 76 Q66 70 74 70 L126 70 Q134 70 139 76 L158 108 Z" fill="url(#gA1)"/>
+<rect x="24" y="104" width="152" height="32" rx="11" fill="url(#gA1)"/>
+<path d="M68 78 L96 78 L96 102 L56 102 Z" fill="#d4ecff"/><path d="M104 78 L124 78 L142 102 L104 102 Z" fill="#a9d4ff"/>
+<rect x="24" y="118" width="152" height="6" fill="#fff" opacity=".28"/>
+<path d="M150 70 L172 30" stroke="#2a2f3f" stroke-width="3" stroke-linecap="round"/><circle cx="172" cy="29" r="4.500" fill="#ffd27a"/>
+<circle cx="170" cy="118" r="5" fill="#ffd27a"/>
+<circle cx="56" cy="142" r="28" fill="#1a1c26"/><circle cx="56" cy="142" r="15" fill="#aab1c6"/><circle cx="56" cy="142" r="6" fill="#3a4056"/>
+<circle cx="144" cy="142" r="28" fill="#1a1c26"/><circle cx="144" cy="142" r="15" fill="#aab1c6"/><circle cx="144" cy="142" r="6" fill="#3a4056"/></symbol>
+
+<symbol id="a-2" viewBox="0 0 200 200">
+<ellipse cx="100" cy="170" rx="80" ry="8" fill="#000" opacity=".3"/>
+<rect x="28" y="112" width="84" height="54" rx="6" fill="#3b82f6"/><rect x="28" y="112" width="84" height="12" rx="6" fill="#fff" opacity=".22"/><rect x="40" y="102" width="22" height="12" rx="4" fill="#3b82f6"/><rect x="78" y="102" width="22" height="12" rx="4" fill="#3b82f6"/>
+<rect x="114" y="112" width="60" height="54" rx="6" fill="#fbbf24"/><rect x="114" y="112" width="60" height="12" rx="6" fill="#fff" opacity=".3"/><rect x="124" y="102" width="18" height="12" rx="4" fill="#fbbf24"/><rect x="148" y="102" width="18" height="12" rx="4" fill="#fbbf24"/>
+<rect x="58" y="58" width="84" height="54" rx="6" fill="#ef4444"/><rect x="58" y="58" width="84" height="12" rx="6" fill="#fff" opacity=".22"/><rect x="70" y="48" width="22" height="12" rx="4" fill="#ef4444"/><rect x="108" y="48" width="22" height="12" rx="4" fill="#ef4444"/>
+<rect x="28" y="154" width="84" height="12" rx="4" fill="#000" opacity=".12"/><rect x="114" y="154" width="60" height="12" rx="4" fill="#000" opacity=".12"/></symbol>
+
+<symbol id="a-3" viewBox="0 0 200 200"><defs><radialGradient id="gA3" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#d7a06b"/><stop offset="1" stop-color="#9a6538"/></radialGradient></defs>
+<ellipse cx="100" cy="177" rx="62" ry="7" fill="#000" opacity=".28"/>
+<ellipse cx="68" cy="165" rx="21" ry="12" fill="url(#gA3)"/><ellipse cx="132" cy="165" rx="21" ry="12" fill="url(#gA3)"/>
+<ellipse cx="100" cy="138" rx="44" ry="35" fill="url(#gA3)"/><ellipse cx="100" cy="144" rx="26" ry="24" fill="#ecc89b"/>
+<ellipse cx="56" cy="130" rx="13" ry="24" transform="rotate(25 56 130)" fill="url(#gA3)"/><ellipse cx="144" cy="130" rx="13" ry="24" transform="rotate(-25 144 130)" fill="url(#gA3)"/>
+<circle cx="64" cy="46" r="17" fill="url(#gA3)"/><circle cx="136" cy="46" r="17" fill="url(#gA3)"/><circle cx="64" cy="46" r="9" fill="#ecc89b"/><circle cx="136" cy="46" r="9" fill="#ecc89b"/>
+<circle cx="100" cy="82" r="42" fill="url(#gA3)"/>
+<ellipse cx="100" cy="96" rx="19" ry="14" fill="#ecc89b"/><ellipse cx="100" cy="90" rx="7" ry="5" fill="#3b2417"/>
+<path d="M100 95 L100 100 M92 102 Q100 108 108 102" stroke="#3b2417" stroke-width="2.500" fill="none" stroke-linecap="round"/>
+<circle cx="83" cy="76" r="4.500" fill="#2a1a10"/><circle cx="117" cy="76" r="4.500" fill="#2a1a10"/><circle cx="84.500" cy="74.500" r="1.400" fill="#fff"/><circle cx="118.500" cy="74.500" r="1.400" fill="#fff"/>
+<path d="M100 122 L82 112 L84 130 Z M100 122 L118 112 L116 130 Z" fill="#ef4444"/><circle cx="100" cy="122" r="5.500" fill="#c62f2f"/></symbol>
+
+<symbol id="a-4" viewBox="0 0 200 200"><defs><linearGradient id="gA4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6ebf7"/><stop offset="1" stop-color="#8d98b8"/></linearGradient></defs>
+<ellipse cx="100" cy="178" rx="58" ry="7" fill="#000" opacity=".3"/>
+<rect x="78" y="148" width="16" height="24" rx="5" fill="#59627d"/><rect x="106" y="148" width="16" height="24" rx="5" fill="#59627d"/>
+<rect x="70" y="168" width="28" height="9" rx="4" fill="#3a4056"/><rect x="102" y="168" width="28" height="9" rx="4" fill="#3a4056"/>
+<rect x="34" y="102" width="18" height="44" rx="9" fill="#8d98b8"/><rect x="148" y="102" width="18" height="44" rx="9" fill="#8d98b8"/>
+<rect x="58" y="96" width="84" height="58" rx="14" fill="url(#gA4)"/><rect x="74" y="108" width="52" height="30" rx="8" fill="#1a2140"/>
+<circle cx="88" cy="123" r="6" fill="#5df0a8"/><circle cx="100" cy="123" r="6" fill="#6bb8ff"/><circle cx="112" cy="123" r="6" fill="#ffd27a"/>
+<rect x="56" y="62" width="8" height="18" rx="4" fill="#59627d"/><rect x="136" y="62" width="8" height="18" rx="4" fill="#59627d"/>
+<path d="M100 44 L100 26" stroke="#59627d" stroke-width="4"/><circle cx="100" cy="23" r="7" fill="#ff6b81"/>
+<rect x="64" y="42" width="72" height="54" rx="16" fill="url(#gA4)"/><rect x="72" y="52" width="56" height="34" rx="10" fill="#0d1230"/>
+<circle cx="88" cy="68" r="7" fill="#5df0a8"/><circle cx="112" cy="68" r="7" fill="#5df0a8"/>
+<path d="M90 80 Q100 86 110 80" stroke="#5df0a8" stroke-width="3" fill="none" stroke-linecap="round"/></symbol>
+
+<symbol id="a-5" viewBox="0 0 200 200"><defs><linearGradient id="gA5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4d94ff"/><stop offset="1" stop-color="#1e4fb5"/></linearGradient></defs>
+<circle cx="56" cy="38" r="10" fill="#fff" opacity=".55"/><circle cx="72" cy="24" r="8" fill="#fff" opacity=".4"/><circle cx="86" cy="14" r="6" fill="#fff" opacity=".3"/>
+<rect x="12" y="165" width="176" height="6" rx="3" fill="#6b5a4a"/>
+<rect x="22" y="170" width="14" height="6" fill="#4a3d31"/><rect x="58" y="170" width="14" height="6" fill="#4a3d31"/><rect x="94" y="170" width="14" height="6" fill="#4a3d31"/><rect x="130" y="170" width="14" height="6" fill="#4a3d31"/><rect x="164" y="170" width="14" height="6" fill="#4a3d31"/>
+<rect x="50" y="52" width="20" height="34" rx="3" fill="#1c1f2b"/><rect x="45" y="46" width="30" height="9" rx="4" fill="#1c1f2b"/>
+<rect x="30" y="80" width="98" height="56" rx="16" fill="url(#gA5)"/><circle cx="96" cy="78" r="11" fill="#ffd27a"/>
+<rect x="112" y="58" width="56" height="78" rx="6" fill="#d63a4a"/><rect x="106" y="50" width="68" height="12" rx="5" fill="#8a1f2c"/><rect x="124" y="72" width="30" height="28" rx="4" fill="#d4ecff"/>
+<circle cx="34" cy="108" r="7" fill="#ffd27a"/>
+<rect x="30" y="126" width="140" height="10" rx="4" fill="#2a2f3f"/>
+<circle cx="56" cy="146" r="17" fill="#222633"/><circle cx="56" cy="146" r="8" fill="#9aa6c4"/>
+<circle cx="96" cy="146" r="17" fill="#222633"/><circle cx="96" cy="146" r="8" fill="#9aa6c4"/>
+<circle cx="146" cy="143" r="22" fill="#222633"/><circle cx="146" cy="143" r="10" fill="#9aa6c4"/>
+<path d="M56 146 L146 143" stroke="#c7cde0" stroke-width="3"/></symbol>
+
+<symbol id="a-6" viewBox="0 0 200 200">
+<ellipse cx="96" cy="176" rx="70" ry="7" fill="#000" opacity=".28"/>
+<path d="M98 46 C46 46 24 88 32 124 C40 160 86 168 104 154 C116 144 100 128 116 120 C138 110 176 126 178 94 C180 62 142 46 98 46Z" fill="#f3d6ab"/>
+<ellipse cx="62" cy="140" rx="9" ry="7" fill="#1b1d2a"/>
+<circle cx="62" cy="86" r="11" fill="#ef4444"/><circle cx="92" cy="68" r="11" fill="#facc15"/><circle cx="126" cy="72" r="11" fill="#22c55e"/><circle cx="152" cy="94" r="10" fill="#3b82f6"/><circle cx="92" cy="106" r="10" fill="#a855f7"/><circle cx="56" cy="112" r="8" fill="#fb923c"/>
+<circle cx="59" cy="83" r="3" fill="#fff" opacity=".5"/><circle cx="89" cy="65" r="3" fill="#fff" opacity=".5"/><circle cx="123" cy="69" r="3" fill="#fff" opacity=".5"/>
+<g transform="rotate(25 150 160)"><rect x="145.500" y="100" width="9" height="60" rx="4" fill="#9a5b2e"/><rect x="144.500" y="88" width="11" height="14" fill="#c9ced8"/><path d="M144.500 88 Q150 64 155.500 88Z" fill="#ef4444"/></g></symbol>
+
+<symbol id="a-7" viewBox="0 0 200 200"><defs><linearGradient id="gA7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d4668"/><stop offset="1" stop-color="#1b2033"/></linearGradient></defs>
+<ellipse cx="100" cy="176" rx="66" ry="7" fill="#000" opacity=".3"/>
+<path d="M44 118 C40 36 160 36 156 118" fill="none" stroke="#252b42" stroke-width="13" stroke-linecap="round"/>
+<rect x="26" y="104" width="44" height="68" rx="20" fill="url(#gA7)"/><rect x="130" y="104" width="44" height="68" rx="20" fill="url(#gA7)"/>
+<rect x="36" y="118" width="24" height="40" rx="12" fill="#0f1322"/><rect x="140" y="118" width="24" height="40" rx="12" fill="#0f1322"/>
+<circle cx="48" cy="138" r="6" fill="#5df0a8"/><circle cx="152" cy="138" r="6" fill="#5df0a8"/>
+<rect x="64" y="112" width="12" height="52" rx="6" fill="#10131f"/><rect x="124" y="112" width="12" height="52" rx="6" fill="#10131f"/></symbol>
+
+<symbol id="a-8" viewBox="0 0 200 200"><defs><linearGradient id="gA8" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8ecf6"/><stop offset="1" stop-color="#8a93ad"/></linearGradient></defs>
+<ellipse cx="100" cy="191" rx="42" ry="5" fill="#000" opacity=".3"/>
+<rect x="76" y="8" width="48" height="64" rx="12" fill="#2b3145"/><rect x="76" y="128" width="48" height="58" rx="12" fill="#2b3145"/>
+<circle cx="100" cy="152" r="2.500" fill="#566082"/><circle cx="100" cy="164" r="2.500" fill="#566082"/><circle cx="100" cy="176" r="2.500" fill="#566082"/>
+<rect x="144" y="92" width="9" height="18" rx="3" fill="#cfd5e6"/>
+<rect x="52" y="58" width="96" height="96" rx="28" fill="url(#gA8)"/><rect x="60" y="66" width="80" height="80" rx="22" fill="#05070f"/>
+<circle cx="100" cy="106" r="30" fill="none" stroke="#1f2640" stroke-width="6"/>
+<circle cx="100" cy="106" r="30" fill="none" stroke="#5df0a8" stroke-width="6" stroke-linecap="round" stroke-dasharray="120 190" transform="rotate(-90 100 106)"/>
+<text x="100" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="17" fill="#fff">10:09</text></symbol>
+
+<symbol id="a-9" viewBox="0 0 200 200"><defs><linearGradient id="gA9" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4d94ff"/><stop offset="1" stop-color="#1d46b8"/></linearGradient></defs>
+<ellipse cx="100" cy="179" rx="64" ry="7" fill="#000" opacity=".3"/>
+<path d="M82 52 Q100 20 118 52" fill="none" stroke="#173a9c" stroke-width="8" stroke-linecap="round"/>
+<rect x="36" y="108" width="22" height="50" rx="10" fill="#173a9c"/><rect x="142" y="108" width="22" height="50" rx="10" fill="#173a9c"/>
+<rect x="48" y="44" width="104" height="132" rx="36" fill="url(#gA9)"/>
+<path d="M52 94 Q100 120 148 94" fill="none" stroke="#173a9c" stroke-width="3" opacity=".6"/>
+<path d="M64 76 Q100 90 136 76" fill="none" stroke="#bcd6ff" stroke-width="3" stroke-linecap="round"/>
+<rect x="64" y="112" width="72" height="52" rx="14" fill="#1b3fae"/><path d="M72 124 H116" stroke="#bcd6ff" stroke-width="3" stroke-linecap="round"/><circle cx="126" cy="124" r="4" fill="#ffd27a"/>
+<path d="M100 134 l4 8 9 1 -7 6 2 9 -8 -5 -8 5 2 -9 -7 -6 9 -1z" fill="#ffd27a"/></symbol>
+
+<symbol id="a-10" viewBox="0 0 200 200"><defs><radialGradient id="gA10" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd27a" stop-opacity=".55"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient><radialGradient id="gA10b" cx=".4" cy=".3" r=".9"><stop offset="0" stop-color="#fff7da"/><stop offset="1" stop-color="#ffab3d"/></radialGradient></defs>
+<circle cx="100" cy="100" r="94" fill="url(#gA10)"/>
+<ellipse cx="100" cy="177" rx="50" ry="6" fill="#000" opacity=".3"/>
+<rect x="66" y="132" width="68" height="42" rx="12" fill="#8892ab"/><rect x="58" y="124" width="84" height="14" rx="6" fill="#cfd5e6"/>
+<path d="M54 126 A46 46 0 0 1 146 126 Z" fill="url(#gA10b)"/><circle cx="100" cy="154" r="6" fill="#5df0a8"/>
+<path d="M38 52 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z" fill="#fff" opacity=".9"/><path d="M164 70 l2.500 6 6 2.500 -6 2.500 -2.500 6 -2.500 -6 -6 -2.500 6 -2.500z" fill="#fff" opacity=".8"/></symbol>
+
+<symbol id="a-11" viewBox="0 0 200 200"><defs><linearGradient id="gA11" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5478"/><stop offset="1" stop-color="#1e2338"/></linearGradient></defs>
+<ellipse cx="100" cy="170" rx="84" ry="7" fill="#000" opacity=".3"/>
+<path d="M58 62 Q100 50 142 62 Q176 68 186 118 Q192 156 168 160 Q148 162 138 138 L62 138 Q52 162 32 160 Q8 156 14 118 Q24 68 58 62Z" fill="url(#gA11)"/>
+<path d="M60 64 Q100 54 140 64" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="3" stroke-linecap="round"/>
+<rect x="42" y="92" width="30" height="10" rx="3" fill="#e8ecf8"/><rect x="52" y="82" width="10" height="30" rx="3" fill="#e8ecf8"/>
+<circle cx="144" cy="85" r="6.500" fill="#5df0a8"/><circle cx="156" cy="97" r="6.500" fill="#ff6b81"/><circle cx="144" cy="109" r="6.500" fill="#ffd27a"/><circle cx="132" cy="97" r="6.500" fill="#6bb8ff"/>
+<circle cx="78" cy="122" r="12" fill="#10131f"/><circle cx="78" cy="122" r="7" fill="#3a4258"/><circle cx="122" cy="122" r="12" fill="#10131f"/><circle cx="122" cy="122" r="7" fill="#3a4258"/>
+<rect x="90" y="88" width="8" height="5" rx="2" fill="#aeb6cf"/><rect x="102" y="88" width="8" height="5" rx="2" fill="#aeb6cf"/></symbol>
+
+<symbol id="a-12" viewBox="0 0 200 200"><defs><linearGradient id="gA12" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7d93"/><stop offset="1" stop-color="#c52a5c"/></linearGradient></defs>
+<ellipse cx="100" cy="177" rx="68" ry="7" fill="#000" opacity=".3"/>
+<rect x="42" y="92" width="116" height="82" rx="8" fill="url(#gA12)"/><rect x="34" y="72" width="132" height="28" rx="8" fill="#ff8da0"/><rect x="34" y="72" width="132" height="8" rx="4" fill="#fff" opacity=".25"/>
+<rect x="91" y="72" width="18" height="102" fill="#ffd27a"/>
+<path d="M100 72 C78 28 40 44 60 66 C70 76 92 74 100 72Z" fill="#ffd27a"/><path d="M100 72 C122 28 160 44 140 66 C130 76 108 74 100 72Z" fill="#ffc04d"/><ellipse cx="100" cy="70" rx="10" ry="8" fill="#e8a53a"/>
+<path d="M28 40 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z" fill="#fff" opacity=".85"/><path d="M172 50 l2.500 6 6 2.500 -6 2.500 -2.500 6 -2.500 -6 -6 -2.500 6 -2.500z" fill="#fff" opacity=".85"/></symbol>
+
 </svg>
 
 <canvas class="planet-canvas"></canvas>
 
 <div class="page" id="top">
-<div class="topbar">🚚 Livraison <b>offerte dès 400 DH</b> · Paiement à la livraison · Code <b>BIENVENUE10</b> : -10% sur votre 1ère commande</div>
+<div class="topbar" id="topbar">🚚 Livraison <b>offerte dès 400 DH</b> · Paiement à la livraison · Code <b>BIENVENUE10</b> : -10% sur votre 1ère commande</div>
 
 <section class="vhero" id="hero">
 <video class="hero-video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260818_072341_50851634-bbc3-4c33-9acc-7647d4db44aa.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
@@ -376,12 +533,12 @@ body{background:radial-gradient(120% 70% at 50% 0%,#0b1a45 0%,var(--bg) 62%)}
 <a class="appear appear--scale" style="--d:.40s" href="#comment">Comment commander</a>
 <a class="appear appear--soft" style="--d:.52s" href="#faq">FAQ</a>
 </nav>
-<button class="vb vb-solid vcta appear appear--scale" style="--d:.34s" type="button" data-open-cart aria-label="Ouvrir le panier"><svg class="ic"><use href="#i-bag"/></svg>Panier <span class="cnt">0</span></button>
-<button class="burger appear appear--scale" id="burger" style="--d:.34s" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+<div class="vright"><button class="vb vb-ghost langbtn appear appear--scale" style="--d:.3s" type="button" data-lang aria-label="Changer de langue"><svg class="ic"><use href="#i-globe"/></svg><span class="lang-txt">العربية</span></button><button class="vb vb-solid vcta appear appear--scale" style="--d:.34s" type="button" data-open-cart aria-label="Ouvrir le panier"><svg class="ic"><use href="#i-bag"/></svg>Panier <span class="cnt">0</span></button>
+<button class="burger appear appear--scale" id="burger" style="--d:.34s" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button></div>
 </header>
 <main class="vmain"><div class="vcopy">
 <span class="vbadge appear appear--pop" style="--d:.22s"><svg class="badge-star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6C12.55 2.6 12.88 3.15 13.08 4.7c.62 4.7 1.52 5.6 6.22 6.22 1.55.2 2.1.53 2.1 1.08s-.55.88-2.1 1.08c-4.7.62-5.6 1.52-6.22 6.22-.2 1.55-.53 2.1-1.08 2.1s-.88-.55-1.08-2.1c-.62-4.7-1.52-5.6-6.22-6.22C3.15 12.88 2.6 12.55 2.6 12s.55-.88 2.1-1.08c4.7-.62 5.6-1.52 6.22-6.22C11.12 3.15 11.45 2.6 12 2.6Z"/></svg>Jouets &amp; accessoires au Maroc</span>
-<h1 class="vh1"><span class="headline-line appear appear--mask" style="--d:.42s">Les meilleurs <em>jouets</em> pour</span><span class="headline-line appear appear--mask" style="--d:.62s">faire briller les yeux.</span></h1>
+<h1 class="vh1"><span id="h1a" class="headline-line appear appear--mask" style="--d:.42s">Les meilleurs <em>jouets</em> pour</span><span id="h1b" class="headline-line appear appear--mask" style="--d:.62s">faire briller les yeux.</span></h1>
 <p class="vlede appear appear--soft" style="--d:.82s;animation-duration:1.25s">Jouets, accessoires, gaming et cadeaux livrés partout au Maroc. Commandez en 2 minutes et payez à la réception.</p>
 <div class="vactions">
 <a class="vb vb-solid appear appear--btn" style="--d:.96s" href="#shop">Découvrir la boutique</a>
@@ -486,7 +643,7 @@ body{background:radial-gradient(120% 70% at 50% 0%,#0b1a45 0%,var(--bg) 62%)}
 
 <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Discuter sur WhatsApp"><svg class="ic"><use href="#i-chat"/></svg></a>
 
-<div class="sticky-nav" id="stickyNav"><div class="sn-in"><a class="sn-logo" href="#top">Tarwanoo<span>.com</span></a><nav class="sn-links" aria-label="Navigation"><a href="#categories">Catégories</a><a href="#shop">Boutique</a><a href="#comment">Comment commander</a><a href="#faq">FAQ</a></nav><button class="sn-cart" data-open-cart type="button" aria-label="Ouvrir le panier"><svg class="ic"><use href="#i-bag"/></svg>Panier <span class="cnt">0</span></button></div></div>
+<div class="sticky-nav" id="stickyNav"><div class="sn-in"><a class="sn-logo" href="#top">Tarwanoo<span>.com</span></a><nav class="sn-links" aria-label="Navigation"><a href="#categories">Catégories</a><a href="#shop">Boutique</a><a href="#comment">Comment commander</a><a href="#faq">FAQ</a></nav><div class="sn-right"><button class="sn-lang" data-lang type="button" aria-label="Changer de langue"><svg class="ic"><use href="#i-globe"/></svg><span class="lang-txt">العربية</span></button><button class="sn-cart" data-open-cart type="button" aria-label="Ouvrir le panier"><svg class="ic"><use href="#i-bag"/></svg>Panier <span class="cnt">0</span></button></div></div></div>
 
 <div class="overlay" id="ov"></div>
 
@@ -554,58 +711,171 @@ const CATS=[
  {id:'gaming',label:'Gaming',emoji:'🎮',desc:'Pour les vrais joueurs',c1:'#b48bff',c2:'#2b2275'},
  {id:'cadeaux',label:'Cadeaux',emoji:'🎁',desc:'Des idées qui font plaisir',c1:'#ffd27a',c2:'#8a3f2a'}
 ];
-/* Produits : remplacez "emoji" par "img:'photos/mon-produit.jpg'" pour afficher une vraie photo */
+/* Produits : pour une vraie photo, ajoutez  img:'photos/mon-produit.jpg'  (elle remplace le dessin) ; ar:[nom, description] = version arabe */
 const P=[
- {id:1,cat:'jouets',name:'Voiture RC Monster 4×4',desc:'Télécommandée, tout-terrain, batterie rechargeable.',price:249,old:329,emoji:'🚙'},
- {id:2,cat:'jouets',name:'Blocs de construction 500 pièces',desc:'Développe la créativité, compatible avec les briques classiques.',price:179,emoji:'🧱'},
- {id:3,cat:'jouets',name:'Peluche Ours Géant 60 cm',desc:'Ultra douce, hypoallergénique, le câlin idéal.',price:149,badge:'Best-seller',emoji:'🧸'},
- {id:4,cat:'jouets',name:'Robot interactif éducatif',desc:'Parle, danse et apprend avec votre enfant.',price:349,badge:'Nouveau',emoji:'🤖'},
- {id:5,cat:'jouets',name:'Circuit de train électrique',desc:'Locomotive, wagons et rails à assembler.',price:259,emoji:'🚂'},
- {id:6,cat:'jouets',name:'Set de dessin & peinture créatif',desc:'Feutres, peintures et pinceaux dans une mallette.',price:89,emoji:'🎨'},
- {id:7,cat:'accessoires',name:'Casque audio sans fil',desc:'Bluetooth, son net, jusqu’à 20 h d’autonomie.',price:199,old:279,emoji:'🎧'},
- {id:8,cat:'accessoires',name:'Montre connectée',desc:'Notifications, suivi d’activité et écran couleur.',price:229,badge:'Best-seller',emoji:'⌚'},
- {id:9,cat:'accessoires',name:'Sac à dos scolaire',desc:'Léger, résistant, plusieurs compartiments.',price:129,emoji:'🎒'},
- {id:10,cat:'accessoires',name:'Lampe LED veilleuse',desc:'Lumière douce multicolore, rechargeable en USB.',price:79,emoji:'💡'},
- {id:11,cat:'gaming',name:'Manette de jeu sans fil',desc:'Ergonomique, compatible PC et mobile.',price:219,badge:'Nouveau',emoji:'🎮'},
- {id:12,cat:'cadeaux',name:'Coffret cadeau surprise',desc:'Une sélection d’articles prête à offrir, emballage soigné.',price:199,badge:'Best-seller',emoji:'🎁'}
+ {id:1,cat:'jouets',name:'Voiture RC Monster 4×4',desc:'Télécommandée, tout-terrain, batterie rechargeable.',price:249,old:329,ar:['سيارة مونستر 4×4 بالتحكم عن بعد','بجهاز تحكم، تصلح لجميع التضاريس، وبطارية قابلة لإعادة الشحن.']},
+ {id:2,cat:'jouets',name:'Blocs de construction 500 pièces',desc:'Développe la créativité, compatible avec les briques classiques.',price:179,ar:['مكعبات البناء 500 قطعة','تنمّي الإبداع ومتوافقة مع المكعبات الكلاسيكية.']},
+ {id:3,cat:'jouets',name:'Peluche Ours Géant 60 cm',desc:'Ultra douce, hypoallergénique, le câlin idéal.',price:149,badge:'Best-seller',ar:['دبدوب عملاق 60 سم','ناعم جدًا، مضاد للحساسية، والعناق المثالي.']},
+ {id:4,cat:'jouets',name:'Robot interactif éducatif',desc:'Parle, danse et apprend avec votre enfant.',price:349,badge:'Nouveau',ar:['روبوت تعليمي تفاعلي','يتحدث ويرقص ويتعلم مع طفلك.']},
+ {id:5,cat:'jouets',name:'Circuit de train électrique',desc:'Locomotive, wagons et rails à assembler.',price:259,ar:['قطار كهربائي بمسار','قاطرة وعربات وسكة للتركيب.']},
+ {id:6,cat:'jouets',name:'Set de dessin & peinture créatif',desc:'Feutres, peintures et pinceaux dans une mallette.',price:89,ar:['طقم الرسم والتلوين','أقلام وألوان وفرش في حقيبة أنيقة.']},
+ {id:7,cat:'accessoires',name:'Casque audio sans fil',desc:'Bluetooth, son net, jusqu’à 20 h d’autonomie.',price:199,old:279,ar:['سماعة رأس لاسلكية','بلوتوث، صوت نقي، وحتى 20 ساعة من التشغيل.']},
+ {id:8,cat:'accessoires',name:'Montre connectée',desc:'Notifications, suivi d’activité et écran couleur.',price:229,badge:'Best-seller',ar:['ساعة ذكية','إشعارات وتتبع للنشاط وشاشة ملوّنة.']},
+ {id:9,cat:'accessoires',name:'Sac à dos scolaire',desc:'Léger, résistant, plusieurs compartiments.',price:129,ar:['حقيبة ظهر مدرسية','خفيفة ومتينة وبعدة جيوب.']},
+ {id:10,cat:'accessoires',name:'Lampe LED veilleuse',desc:'Lumière douce multicolore, rechargeable en USB.',price:79,ar:['مصباح ليلي LED','إضاءة هادئة متعددة الألوان، تُشحن عبر USB.']},
+ {id:11,cat:'gaming',name:'Manette de jeu sans fil',desc:'Ergonomique, compatible PC et mobile.',price:219,badge:'Nouveau',ar:['يد تحكم لاسلكية','مريحة ومتوافقة مع الحاسوب والهاتف.']},
+ {id:12,cat:'cadeaux',name:'Coffret cadeau surprise',desc:'Une sélection d’articles prête à offrir, emballage soigné.',price:199,badge:'Best-seller',ar:['صندوق هدية مفاجأة','مجموعة منتقاة جاهزة للإهداء بتغليف أنيق.']}
 ];
+const W=[
+ ['shield','Qualité vérifiée','Chaque produit est contrôlé avant l’expédition pour vous garantir un article en parfait état.','جودة مضمونة','نفحص كل منتج قبل الشحن لنضمن لك قطعة في حالة ممتازة.'],
+ ['truck','Livraison rapide','Nous expédions partout au Maroc et vous suivons jusqu’à la remise de votre colis.','توصيل سريع','نشحن لجميع مدن المغرب ونتابع طلبك حتى يصل إليك.'],
+ ['cash','Paiement à la livraison','Aucun paiement en ligne : vous réglez en espèces à la réception, en toute sérénité.','الدفع عند الاستلام','لا دفع عبر الإنترنت: تدفع نقدًا عند الاستلام وأنت مطمئن.'],
+ ['return','Retour sous 7 jours','Un souci ? Échange ou retour simple dans les 7 jours suivant la réception.','إرجاع خلال 7 أيام','هناك مشكل؟ استبدال أو إرجاع بسهولة خلال 7 أيام من الاستلام.'],
+ ['gift','Emballage cadeau','Offrez en beauté : précisez-le à la commande et nous soignons la présentation.','تغليف هدية','أهدِ بأناقة: اذكر ذلك عند الطلب وسنعتني بالتقديم.'],
+ ['chat','Support réactif','Une question avant ou après l’achat ? Notre équipe répond sur WhatsApp.','دعم سريع','سؤال قبل الشراء أو بعده؟ فريقنا يجيبك عبر واتساب.']
+];
+
+/* ============ LANGUE (FR / AR) ============ */
+let lang='fr',first=true;
+try{const sv=localStorage.getItem('tarwanoo_lang');if(sv==='ar'||sv==='fr')lang=sv}catch(e){}
+const AR={
+'Catégories':'الفئات','Boutique':'المتجر','Comment commander':'كيف تطلب','FAQ':'الأسئلة الشائعة','Panier':'السلة',
+'Jouets & accessoires au Maroc':'ألعاب وإكسسوارات في المغرب',
+'Jouets, accessoires, gaming et cadeaux livrés partout au Maroc. Commandez en 2 minutes et payez à la réception.':'ألعاب وإكسسوارات وألعاب فيديو وهدايا نوصلها لجميع مدن المغرب. اطلب في دقيقتين وادفع عند الاستلام.',
+'Découvrir la boutique':'اكتشف المتجر','Commander sur WhatsApp':'اطلب عبر واتساب',
+'Livraison partout au Maroc':'التوصيل لجميع مدن المغرب','Paiement à la livraison':'الدفع عند الاستلام',
+'Retour sous 7 jours & support WhatsApp':'الإرجاع خلال 7 أيام ودعم عبر واتساب',
+'Nos univers':'أقسامنا','Trouvez le bon produit en un clin d’œil':'اعثر على المنتج المناسب في لمح البصر',
+'Quatre univers, une seule boutique. Cliquez sur une catégorie pour voir les produits.':'أربعة أقسام، متجر واحد. اضغط على قسم لتشاهد منتجاته.',
+'La boutique':'المتجر','Nos produits les plus demandés':'منتجاتنا الأكثر طلبًا',
+'Ajoutez vos articles au panier, puis validez votre commande directement sur WhatsApp.':'أضف منتجاتك إلى السلة ثم أكّد طلبك مباشرة عبر واتساب.',
+'Tout':'الكل','Jouets':'الألعاب','Accessoires':'الإكسسوارات','Gaming':'الألعاب الإلكترونية','Cadeaux':'الهدايا',
+'Pour jouer, créer et rêver':'للعب والإبداع والأحلام','Style, confort et praticité':'أناقة وراحة وعملية','Pour les vrais joueurs':'للاعبين الحقيقيين','Des idées qui font plaisir':'أفكار تُدخل الفرحة',
+'Rechercher un produit…':'ابحث عن منتج…','Rechercher un produit':'ابحث عن منتج',
+'Trier : Pertinence':'الترتيب: الأنسب','Prix croissant':'السعر: من الأقل','Prix décroissant':'السعر: من الأعلى','Trier les produits':'ترتيب المنتجات',
+'Offre de bienvenue':'عرض الترحيب','-10% sur votre première commande':'خصم 10% على أول طلب',
+'Ajoutez vos produits au panier, saisissez le code et profitez de la réduction. La livraison est offerte dès 400 DH d’achats.':'أضف منتجاتك إلى السلة، أدخل الرمز واستفد من الخصم. التوصيل مجاني ابتداءً من 400 درهم.',
+'J’en profite':'أستفيد من العرض','Votre code':'رمزك',
+'Pourquoi nous':'لماذا نحن','Acheter en toute confiance':'تسوّق بكل ثقة',
+'Chaque commande est suivie avec soin, de la préparation jusqu’à votre porte.':'نتابع كل طلب بعناية، من التحضير حتى باب بيتك.',
+'Simple et rapide':'بسيط وسريع','Commander, c’est facile':'الطلب سهل',
+'Choisissez vos produits':'اختر منتجاتك','Parcourez la boutique et ajoutez vos articles préférés au panier.':'تصفّح المتجر وأضف منتجاتك المفضلة إلى السلة.',
+'Confirmez sur WhatsApp':'أكّد عبر واتساب','Renseignez vos coordonnées : votre commande est préparée et envoyée en un clic.':'أدخل معلوماتك، وسيتم تجهيز طلبك وإرساله بضغطة واحدة.',
+'Recevez et payez':'استلم وادفع','Nous vous livrons à domicile. Vous payez uniquement à la réception.':'نوصل لك الطلب إلى باب بيتك، وتدفع فقط عند الاستلام.',
+'Questions fréquentes':'أسئلة شائعة','Vous avez une question ?':'عندك سؤال؟',
+'Comment passer commande ?':'كيف أطلب؟',
+'Ajoutez vos produits au panier, cliquez sur « Commander », remplissez vos informations de livraison puis envoyez le message sur WhatsApp. Nous vous confirmons la commande rapidement.':'أضف منتجاتك إلى السلة، اضغط على «إتمام الطلب»، املأ معلومات التوصيل ثم أرسل الرسالة عبر واتساب. نؤكد لك الطلب بسرعة.',
+'Quels sont les modes de paiement ?':'ما هي طرق الدفع؟',
+'Le paiement se fait à la livraison, en espèces, une fois que vous avez reçu et vérifié votre colis.':'الدفع عند الاستلام نقدًا، بعد أن تستلم طلبك وتتحقق منه.',
+'Quels sont les délais et frais de livraison ?':'ما هي مدة التوصيل وتكلفته؟',
+'Nous livrons partout au Maroc. Les frais de livraison sont de 30 DH, et la livraison est offerte dès 400 DH d’achats. Le délai est confirmé lors de la validation de votre commande.':'نوصل لجميع مدن المغرب. تكلفة التوصيل 30 درهمًا، والتوصيل مجاني ابتداءً من 400 درهم. نؤكد لك المدة عند تأكيد الطلب.',
+'Puis-je retourner ou échanger un produit ?':'هل يمكنني إرجاع المنتج أو استبداله؟',
+'Oui, vous disposez de 7 jours après réception pour demander un retour ou un échange, si le produit est dans son état d’origine.':'نعم، لديك 7 أيام بعد الاستلام لطلب الإرجاع أو الاستبدال، بشرط أن يكون المنتج بحالته الأصلية.',
+'Proposez-vous l’emballage cadeau ?':'هل توفرون التغليف كهدية؟',
+'Oui. Précisez-le dans le champ « Remarque » lors de la commande et nous préparons votre colis en emballage cadeau.':'نعم. اذكر ذلك في خانة «ملاحظة» عند الطلب وسنجهّز طلبك بتغليف هدية.',
+'Une question ? Un conseil ?':'عندك سؤال؟ تحتاج نصيحة؟','Parlons-en sur WhatsApp':'تواصل معنا عبر واتساب',
+'Besoin d’aide pour choisir un cadeau ? Écrivez-nous, nous vous conseillons avec plaisir.':'تحتاج مساعدة في اختيار هدية؟ راسلنا وسنسعد بنصحك.',
+'Écrire sur WhatsApp':'راسلنا على واتساب','Voir la boutique':'عرض المتجر',
+'Jouets, accessoires et idées cadeaux livrés chez vous, partout au Maroc.':'ألعاب وإكسسوارات وأفكار هدايا نوصلها لباب بيتك في كل أنحاء المغرب.',
+'Aide':'مساعدة','Contact':'اتصل بنا','Livraison & paiement':'التوصيل والدفع','Retours':'الإرجاع','WhatsApp':'واتساب','Maroc':'المغرب',
+'Mon panier':'سلتي','Code promo':'رمز الخصم','Appliquer':'تطبيق','Sous-total':'المجموع الفرعي','Réduction':'الخصم','Livraison':'التوصيل','Total':'المجموع',
+'Commander':'إتمام الطلب','Paiement à la livraison · Retour sous 7 jours':'الدفع عند الاستلام · الإرجاع خلال 7 أيام',
+'Finaliser ma commande':'إتمام طلبي',
+'Renseignez vos informations : votre commande sera préparée dans un message WhatsApp prêt à envoyer.':'أدخل معلوماتك وسيتم تجهيز طلبك في رسالة واتساب جاهزة للإرسال.',
+'Nom complet':'الاسم الكامل','Téléphone':'رقم الهاتف','Ville':'المدينة','Adresse de livraison':'عنوان التوصيل','Remarque (facultatif)':'ملاحظة (اختياري)',
+'Ex : Youssef Alami':'مثال: يوسف العلمي','Votre ville':'مدينتك','Rue, quartier, immeuble…':'الشارع، الحي، العمارة…','Emballage cadeau, horaire de livraison…':'تغليف هدية، وقت التوصيل…',
+'Envoyer ma commande sur WhatsApp':'إرسال طلبي عبر واتساب','Retour au panier':'العودة إلى السلة',
+'Votre commande est prête !':'طلبك جاهز!',
+'WhatsApp s’est ouvert avec votre commande. Il ne reste qu’à appuyer sur « Envoyer » pour la confirmer. Nous vous répondons très vite.':'تم فتح واتساب مع طلبك. بقي فقط أن تضغط على «إرسال» لتأكيده. سنرد عليك قريبًا.',
+'Continuer mes achats':'متابعة التسوق',
+/* attributs aria + éléments dynamiques */
+'Ouvrir le panier':'فتح السلة','Ouvrir le menu':'فتح القائمة','Fermer le menu':'إغلاق القائمة','Fermer':'إغلاق','Navigation':'التنقل','Changer de langue':'تغيير اللغة',
+'Discuter sur WhatsApp':'تحدث معنا على واتساب','Aperçu du produit':'معاينة المنتج','Moins':'أقل','Plus':'أكثر','Supprimer':'حذف',
+'Aperçu rapide':'معاينة سريعة','Ajouter':'أضف','Ajouter au panier':'أضف إلى السلة','Retour sous 7 jours':'الإرجاع خلال 7 أيام',
+'Aucun produit trouvé. Essayez un autre mot-clé.':'لم نجد أي منتج. جرّب كلمة أخرى.',
+'Votre panier est vide':'سلتك فارغة','Ajoutez des produits pour commencer.':'أضف بعض المنتجات للبدء.','Offerte':'مجانًا',
+'Ajouté au panier':'تمت الإضافة إلى السلة','Code promo invalide':'رمز الخصم غير صالح','Merci de compléter les champs en rouge':'المرجو ملء الخانات المعلّمة بالأحمر',
+'Total à payer à la livraison':'المجموع المطلوب عند الاستلام','Best-seller':'الأكثر مبيعًا','Nouveau':'جديد'
+};
+const H={
+ topbar:{fr:'🚚 Livraison <b>offerte dès 400 DH</b> · Paiement à la livraison · Code <b>BIENVENUE10</b> : -10% sur votre 1ère commande',ar:'🚚 توصيل <b>مجاني ابتداءً من 400 درهم</b> · الدفع عند الاستلام · الرمز <b>BIENVENUE10</b> : خصم 10% على أول طلب'},
+ h1a:{fr:'Les meilleurs <em>jouets</em> pour',ar:'أفضل <em>الألعاب</em> لإسعاد'},
+ h1b:{fr:'faire briller les yeux.',ar:'عيون أطفالكم.'}
+};
+const tr=s=>(lang==='ar'&&AR[s]!==undefined)?AR[s]:s;
+const tt=(f,a)=>lang==='ar'?a:f;
+
 /* ============ OUTILS ============ */
 const $=s=>document.querySelector(s);
 const cat=id=>CATS.find(c=>c.id===id);
 const prod=id=>P.find(p=>p.id===id);
-const fmt=n=>Math.round(n).toLocaleString('fr-FR').replace(/[\u202f\u00a0]/g,' ')+' '+STORE.currency;
+const fmt=n=>{const v=Math.round(n).toLocaleString('fr-FR').replace(/[  ]/g,' ');return lang==='ar'?v+' درهم':v+' '+STORE.currency};
 const waBase='https://wa.me/'+STORE.whatsapp;
-const hello=encodeURIComponent('Bonjour, j’aimerais avoir des informations sur vos produits.');
-['waHero','waCta','waFoot','waFloat'].forEach(id=>{const a=document.getElementById(id);if(a)a.href=waBase+'?text='+hello});
-/* ============ CONTENU STATIQUE ============ */
-$('#cg').innerHTML=CATS.map((c,i)=>`<button class="cat-card" data-cat="${c.id}" data-reveal style="--c1:${c.c1};--rd:${i*80}ms"><span class="cat-emoji">${c.emoji}</span><h3>${c.label}</h3><p>${c.desc}</p></button>`).join('');
-const W=[["shield","Qualité vérifiée","Chaque produit est contrôlé avant l’expédition pour vous garantir un article en parfait état."],
-["truck","Livraison rapide","Nous expédions partout au Maroc et vous suivons jusqu’à la remise de votre colis."],
-["cash","Paiement à la livraison","Aucun paiement en ligne : vous réglez en espèces à la réception, en toute sérénité."],
-["return","Retour sous 7 jours","Un souci ? Échange ou retour simple dans les 7 jours suivant la réception."],
-["gift","Emballage cadeau","Offrez en beauté : précisez-le à la commande et nous soignons la présentation."],
-["chat","Support réactif","Une question avant ou après l’achat ? Notre équipe répond sur WhatsApp."]];
-$('#fg').innerHTML=W.map((f,i)=>`<article class="card" data-reveal style="--rd:${i*90}ms"><div class="card-icon"><svg class="ic"><use href="#i-${f[0]}"/></svg></div><h3>${f[1]}</h3><p>${f[2]}</p></article>`).join('');
-$('#cp').textContent='© '+new Date().getFullYear()+' Tarwanoo.com — Tous droits réservés.';
+const pname=p=>lang==='ar'&&p.ar?p.ar[0]:p.name;
+const pdesc=p=>lang==='ar'&&p.ar?p.ar[1]:p.desc;
+const vis=p=>p.img?`<img src="${p.img}" alt="${pname(p)}" loading="lazy">`:`<svg class="art" viewBox="0 0 200 200" aria-hidden="true"><use href="#a-${p.id}"/></svg>`;
+function setWa(){
+  const m=encodeURIComponent(tt('Bonjour, j’aimerais avoir des informations sur vos produits.','مرحبًا، أرغب في الحصول على معلومات حول منتجاتكم.'));
+  ['waHero','waCta','waFoot','waFloat'].forEach(id=>{const a=document.getElementById(id);if(a)a.href=waBase+'?text='+m});
+}
+function setCopy(){$('#cp').textContent='© '+new Date().getFullYear()+' Tarwanoo.com — '+tt('Tous droits réservés.','جميع الحقوق محفوظة.')}
+/* traduction des textes statiques (on mémorise le texte français d'origine) */
+const SKIP={SCRIPT:1,STYLE:1,TEXTAREA:1};
+function walk(root){
+  const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>SKIP[n.parentNode.nodeName]?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+  const nodes=[];while(w.nextNode())nodes.push(w.currentNode);
+  nodes.forEach(n=>{
+    if(n.__fr===undefined){const k=n.nodeValue.trim().replace(/\s+/g,' ');n.__fr=(k&&AR[k]!==undefined)?n.nodeValue:null}
+    if(n.__fr===null)return;
+    if(lang==='ar'){
+      const k=n.__fr.trim().replace(/\s+/g,' ');
+      n.nodeValue=n.__fr.match(/^\s*/)[0]+AR[k]+n.__fr.match(/\s*$/)[0];
+    }else n.nodeValue=n.__fr;
+  });
+}
+function attrs(){
+  document.querySelectorAll('[placeholder],[aria-label]').forEach(el=>{
+    ['placeholder','aria-label'].forEach(a=>{
+      if(!el.hasAttribute(a))return;
+      const k='__fr_'+a;if(el[k]===undefined)el[k]=el.getAttribute(a);
+      const v=el[k];el.setAttribute(a,(lang==='ar'&&AR[v]!==undefined)?AR[v]:v);
+    });
+  });
+}
+function applyLang(){
+  const ar=lang==='ar';
+  document.documentElement.lang=lang;document.documentElement.dir=ar?'rtl':'ltr';
+  document.title=ar?'Tarwanoo.com — ألعاب وإكسسوارات، توصيل لجميع مدن المغرب':'Tarwanoo.com — Jouets & accessoires, livrés partout au Maroc';
+  Object.keys(H).forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=H[id][lang]});
+  walk(document.body);attrs();
+  renderCats();renderFeatures();renderTabs();renderProducts();renderCart();setCopy();setWa();
+  document.querySelectorAll('.lang-txt').forEach(s=>s.textContent=ar?'Français':'العربية');
+  if($('#qview').classList.contains('on'))openView(qvId);
+}
+/* ============ CONTENU ============ */
+function renderCats(){
+  $('#cg').innerHTML=CATS.map((c,i)=>`<button class="cat-card" data-cat="${c.id}"${first?` data-reveal style="--c1:${c.c1};--rd:${i*80}ms"`:` style="--c1:${c.c1}"`}><span class="cat-emoji">${c.emoji}</span><h3>${tr(c.label)}</h3><p>${tr(c.desc)}</p></button>`).join('');
+}
+function renderFeatures(){
+  $('#fg').innerHTML=W.map((f,i)=>`<article class="card${first?'':' in'}"${first?` data-reveal style="--rd:${i*90}ms"`:''}><div class="card-icon"><svg class="ic"><use href="#i-${f[0]}"/></svg></div><h3>${lang==='ar'?f[3]:f[1]}</h3><p>${lang==='ar'?f[4]:f[2]}</p></article>`).join('');
+}
 /* ============ BOUTIQUE ============ */
 let filter='all',qry='',sortBy='def';
 function renderTabs(){
   const all=[{id:'all',label:'Tout'}].concat(CATS);
-  $('#tabs').innerHTML=all.map(c=>`<button class="tab${c.id===filter?' on':''}" data-filter="${c.id}">${c.label}</button>`).join('');
+  $('#tabs').innerHTML=all.map(c=>`<button class="tab${c.id===filter?' on':''}" data-filter="${c.id}">${tr(c.label)}</button>`).join('');
 }
 function renderProducts(){
-  let list=P.filter(p=>(filter==='all'||p.cat===filter)&&(!qry||(p.name+' '+p.desc+' '+cat(p.cat).label).toLowerCase().includes(qry)));
+  let list=P.filter(p=>(filter==='all'||p.cat===filter)&&(!qry||(p.name+' '+p.desc+' '+p.ar.join(' ')+' '+cat(p.cat).label+' '+tr(cat(p.cat).label)).toLowerCase().includes(qry)));
   if(sortBy==='asc')list=list.slice().sort((a,b)=>a.price-b.price);else if(sortBy==='desc')list=list.slice().sort((a,b)=>b.price-a.price);
-  $('#pg').innerHTML=!list.length?'<div class="noresult">Aucun produit trouvé. Essayez un autre mot-clé.</div>':list.map((p,i)=>{
+  $('#pg').innerHTML=!list.length?`<div class="noresult">${tr('Aucun produit trouvé. Essayez un autre mot-clé.')}</div>`:list.map((p,i)=>{
     const c=cat(p.cat);
     const disc=p.old?Math.round((1-p.price/p.old)*100):0;
-    const badge=disc?`<span class="badge sale">-${disc}%</span>`:(p.badge?`<span class="badge ${p.badge==='Nouveau'?'new':'hot'}">${p.badge}</span>`:'');
-    const visual=p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy">`:`<span class="pemoji">${p.emoji}</span>`;
-    return `<article class="pcard" style="--c1:${c.c1};--c2:${c.c2};animation-delay:${i*50}ms"><div class="ptile" data-view="${p.id}">${badge}${visual}<span class="qv">Aperçu rapide</span></div><div class="pbody"><span class="pcat">${c.label}</span><h3 data-view="${p.id}">${p.name}</h3><p>${p.desc}</p><div class="pfoot"><div class="price"><b>${fmt(p.price)}</b>${p.old?`<s>${fmt(p.old)}</s>`:''}</div><button class="btn btn-primary btn-sm" data-add="${p.id}">Ajouter</button></div></div></article>`;
+    const badge=disc?`<span class="badge sale" dir="ltr">-${disc}%</span>`:(p.badge?`<span class="badge ${p.badge==='Nouveau'?'new':'hot'}">${tr(p.badge)}</span>`:'');
+    return `<article class="pcard" style="--c1:${c.c1};--c2:${c.c2};animation-delay:${i*50}ms"><div class="ptile" data-view="${p.id}">${badge}${vis(p)}<span class="qv">${tr('Aperçu rapide')}</span></div><div class="pbody"><span class="pcat">${tr(c.label)}</span><h3 data-view="${p.id}">${pname(p)}</h3><p>${pdesc(p)}</p><div class="pfoot"><div class="price"><b>${fmt(p.price)}</b>${p.old?`<s>${fmt(p.old)}</s>`:''}</div><button class="btn btn-primary btn-sm" data-add="${p.id}">${tr('Ajouter')}</button></div></div></article>`;
   }).join('');
 }
 function setFilter(id){filter=id;renderTabs();renderProducts()}
-renderTabs();renderProducts();
 $('#q').addEventListener('input',e=>{qry=e.target.value.trim().toLowerCase();renderProducts()});
 $('#sort').addEventListener('change',e=>{sortBy=e.target.value;renderProducts()});
 /* ============ PANIER ============ */
@@ -626,27 +896,28 @@ function renderCart(){
   const t=totals(),ids=Object.keys(cart);
   document.querySelectorAll('.cnt').forEach(c=>c.textContent=t.n);
   const left=STORE.freeFrom-t.after;
-  $('#ship').innerHTML=t.n===0?`Livraison offerte dès <b>${fmt(STORE.freeFrom)}</b> d’achats`:(left>0?`Plus que <b>${fmt(left)}</b> pour profiter de la livraison offerte`:`🎉 <b>Livraison offerte</b> sur cette commande`)+`<div class="ship-track"><div class="ship-fill" style="width:${Math.min(100,t.after/STORE.freeFrom*100)}%"></div></div>`;
+  const msg=t.n===0?tt(`Livraison offerte dès <b>${fmt(STORE.freeFrom)}</b> d’achats`,`التوصيل مجاني ابتداءً من <b>${fmt(STORE.freeFrom)}</b>`)
+    :(left>0?tt(`Plus que <b>${fmt(left)}</b> pour profiter de la livraison offerte`,`بقي <b>${fmt(left)}</b> فقط للحصول على توصيل مجاني`):tt('🎉 <b>Livraison offerte</b> sur cette commande','🎉 <b>توصيل مجاني</b> لهذا الطلب'));
+  $('#ship').innerHTML=msg+`<div class="ship-track"><div class="ship-fill" style="width:${Math.min(100,t.after/STORE.freeFrom*100)}%"></div></div>`;
   $('#dfoot').style.display=ids.length?'':'none';
   if(!ids.length){
-    $('#items').innerHTML=`<div class="empty"><div class="big">🛍️</div><b>Votre panier est vide</b><p style="margin-top:8px">Ajoutez des produits pour commencer.</p><button class="btn btn-primary" data-close data-goto="shop">Voir la boutique</button></div>`;
+    $('#items').innerHTML=`<div class="empty"><div class="big">🛍️</div><b>${tr('Votre panier est vide')}</b><p style="margin-top:8px">${tr('Ajoutez des produits pour commencer.')}</p><button class="btn btn-primary" data-close data-goto="shop">${tr('Voir la boutique')}</button></div>`;
     return;
   }
   $('#items').innerHTML=ids.map(id=>{
     const p=prod(+id),c=cat(p.cat),q=cart[id];
-    const v=p.img?`<img src="${p.img}" alt="">`:p.emoji;
-    return `<div class="ci"><div class="ci-tile" style="--c1:${c.c1};--c2:${c.c2}">${v}</div><div><h4>${p.name}</h4><small>${fmt(p.price)}</small><div class="qty"><button data-dec="${id}" aria-label="Moins">−</button><span>${q}</span><button data-inc="${id}" aria-label="Plus">+</button></div></div><div class="ci-right"><b>${fmt(p.price*q)}</b><button class="del" data-del="${id}" aria-label="Supprimer"><svg class="ic"><use href="#i-trash"/></svg></button></div></div>`;
+    return `<div class="ci"><div class="ci-tile" style="--c1:${c.c1};--c2:${c.c2}">${vis(p)}</div><div><h4>${pname(p)}</h4><small>${fmt(p.price)}</small><div class="qty"><button data-dec="${id}" aria-label="${tr('Moins')}">−</button><span>${q}</span><button data-inc="${id}" aria-label="${tr('Plus')}">+</button></div></div><div class="ci-right"><b>${fmt(p.price*q)}</b><button class="del" data-del="${id}" aria-label="${tr('Supprimer')}"><svg class="ic"><use href="#i-trash"/></svg></button></div></div>`;
   }).join('');
   $('#tSub').textContent=fmt(t.sub);
   $('#rowDisc').style.display=t.disc>0?'':'none';
   $('#tDisc').textContent='-'+fmt(t.disc);
-  $('#tShip').textContent=t.ship===0?'Offerte':fmt(t.ship);
+  $('#tShip').textContent=t.ship===0?tr('Offerte'):fmt(t.ship);
   $('#tTotal').textContent=fmt(t.total);
 }
 function bump(){document.querySelectorAll('.cnt').forEach(c=>{c.classList.remove('bump');void c.offsetWidth;c.classList.add('bump')})}
 let toastTimer;
 function toast(msg){const t=$('#toast');$('#toastT').textContent=msg;t.classList.add('on');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('on'),2200)}
-function add(id){cart[id]=(cart[id]||0)+1;save();renderCart();bump();toast('Ajouté au panier')}
+function add(id){cart[id]=(cart[id]||0)+1;save();renderCart();bump();toast(tr('Ajouté au panier'))}
 function change(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];save();renderCart()}
 /* ============ OUVERTURE / FERMETURE ============ */
 const lock=on=>{document.body.classList.toggle('locked',on);if(window.__lenis){on?window.__lenis.stop():window.__lenis.start()}};
@@ -656,31 +927,36 @@ function openModal(){
   const t=totals();if(!t.n)return;
   $('#drawer').classList.remove('on');
   $('#mForm').style.display='';$('#mDone').style.display='none';
-  $('#recap').innerHTML=`<div class="line" style="margin-top:0"><span>${t.n} article${t.n>1?'s':''}</span><span>${fmt(t.sub)}</span></div>`+(t.disc>0?`<div class="line"><span>Réduction (${promoCode})</span><span class="ok">-${fmt(t.disc)}</span></div>`:'')+`<div class="line"><span>Livraison</span><span>${t.ship===0?'Offerte':fmt(t.ship)}</span></div><div class="line total" style="margin:10px 0 0;padding-top:10px;font-size:16px"><span>Total à payer à la livraison</span><span>${fmt(t.total)}</span></div>`;
+  const nTxt=tt(`${t.n} article${t.n>1?'s':''}`,`${t.n} ${t.n>1?'منتجات':'منتج'}`);
+  $('#recap').innerHTML=`<div class="line" style="margin-top:0"><span>${nTxt}</span><span>${fmt(t.sub)}</span></div>`+(t.disc>0?`<div class="line"><span>${tr('Réduction')} (${promoCode})</span><span class="ok" dir="ltr">-${fmt(t.disc)}</span></div>`:'')+`<div class="line"><span>${tr('Livraison')}</span><span>${t.ship===0?tr('Offerte'):fmt(t.ship)}</span></div><div class="line total" style="margin:10px 0 0;padding-top:10px;font-size:16px"><span>${tr('Total à payer à la livraison')}</span><span>${fmt(t.total)}</span></div>`;
   $('#modal').classList.add('on');$('#ov').classList.add('on');lock(true);
 }
 function closeModal(keep){$('#modal').classList.remove('on');if(!keep){$('#ov').classList.remove('on');lock(false)}}
 /* ============ APERÇU RAPIDE ============ */
 let qvId=0,qvQty=1;
-function updWa(){const p=prod(qvId);$('#qvWa').href=waBase+'?text='+encodeURIComponent(`Bonjour ${STORE.name}, je souhaite commander : ${qvQty} × ${p.name} (${fmt(p.price*qvQty)}).`)}
+function updWa(){
+  const p=prod(qvId);
+  $('#qvWa').href=waBase+'?text='+encodeURIComponent(tt(`Bonjour ${STORE.name}, je souhaite commander : ${qvQty} × ${pname(p)} (${fmt(p.price*qvQty)}).`,`مرحبًا ${STORE.name}، أرغب في طلب: ${qvQty} × ${pname(p)} (${fmt(p.price*qvQty)}).`));
+}
 function openView(id){
-  const p=prod(id),c=cat(p.cat);qvId=id;qvQty=1;
+  const p=prod(id),c=cat(p.cat);qvId=id;
+  if(!$('#qview').classList.contains('on'))qvQty=1;
   const t=$('#qvTile');t.style.setProperty('--c1',c.c1);t.style.setProperty('--c2',c.c2);
-  t.innerHTML=p.img?`<img src="${p.img}" alt="${p.name}">`:`<span class="pemoji">${p.emoji}</span>`;
+  t.innerHTML=vis(p);
   const disc=p.old?Math.round((1-p.price/p.old)*100):0;
-  $('#qvInfo').innerHTML=`<span class="pcat">${c.label}</span><h3>${p.name}</h3><div class="qv-price"><b>${fmt(p.price)}</b>${p.old?`<s>${fmt(p.old)}</s><em>-${disc}%</em>`:''}</div><p>${p.desc}</p><ul class="qv-points"><li>Livraison partout au Maroc</li><li>Paiement à la livraison</li><li>Retour sous 7 jours</li></ul><div class="qv-row"><div class="qty"><button type="button" data-qv="-1" aria-label="Moins">−</button><span id="qvQty">1</span><button type="button" data-qv="1" aria-label="Plus">+</button></div><button class="btn btn-primary" type="button" id="qvAdd">Ajouter au panier</button></div><a class="btn btn-outline btn-block" id="qvWa" href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg>Commander sur WhatsApp</a>`;
+  $('#qvInfo').innerHTML=`<span class="pcat">${tr(c.label)}</span><h3>${pname(p)}</h3><div class="qv-price"><b>${fmt(p.price)}</b>${p.old?`<s>${fmt(p.old)}</s><em dir="ltr">-${disc}%</em>`:''}</div><p>${pdesc(p)}</p><ul class="qv-points"><li>${tr('Livraison partout au Maroc')}</li><li>${tr('Paiement à la livraison')}</li><li>${tr('Retour sous 7 jours')}</li></ul><div class="qv-row"><div class="qty"><button type="button" data-qv="-1" aria-label="${tr('Moins')}">−</button><span id="qvQty">${qvQty}</span><button type="button" data-qv="1" aria-label="${tr('Plus')}">+</button></div><button class="btn btn-primary" type="button" id="qvAdd">${tr('Ajouter au panier')}</button></div><a class="btn btn-outline btn-block" id="qvWa" href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-chat"/></svg>${tr('Commander sur WhatsApp')}</a>`;
   updWa();
   $('#qview').classList.add('on');$('#ov').classList.add('on');lock(true);
 }
 $('#qview').addEventListener('click',e=>{
   const b=e.target.closest('[data-qv],#qvAdd');if(!b)return;
-  if(b.id==='qvAdd'){cart[qvId]=(cart[qvId]||0)+qvQty;save();renderCart();bump();closeAll();toast('Ajouté au panier')}
+  if(b.id==='qvAdd'){cart[qvId]=(cart[qvId]||0)+qvQty;save();renderCart();bump();closeAll();toast(tr('Ajouté au panier'))}
   else{qvQty=Math.max(1,Math.min(20,qvQty+Number(b.dataset.qv)));$('#qvQty').textContent=qvQty;updWa()}
 });
 document.addEventListener('click',e=>{const v=e.target.closest('[data-view]');if(v)openView(Number(v.dataset.view))});
 /* ============ ÉVÉNEMENTS ============ */
 document.addEventListener('click',e=>{
-  const t=e.target.closest('[data-add],[data-inc],[data-dec],[data-del],[data-filter],[data-cat],[data-open-cart],[data-close]');
+  const t=e.target.closest('[data-add],[data-inc],[data-dec],[data-del],[data-filter],[data-cat],[data-open-cart],[data-close],[data-lang]');
   if(!t)return;
   if(t.dataset.add)add(+t.dataset.add);
   else if(t.dataset.inc)change(+t.dataset.inc,1);
@@ -689,6 +965,7 @@ document.addEventListener('click',e=>{
   else if(t.dataset.filter)setFilter(t.dataset.filter);
   else if(t.dataset.cat){setFilter(t.dataset.cat);const s=document.getElementById('shop');if(t.tagName!=='A')s.scrollIntoView({behavior:'smooth'})}
   else if('openCart' in t.dataset)openCart();
+  else if('lang' in t.dataset){lang=lang==='ar'?'fr':'ar';try{localStorage.setItem('tarwanoo_lang',lang)}catch(er){}applyLang()}
   else if('close' in t.dataset){closeAll();if(t.dataset.goto)document.getElementById(t.dataset.goto).scrollIntoView({behavior:'smooth'})}
 });
 $('#ov').addEventListener('click',closeAll);
@@ -696,8 +973,8 @@ addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
 $('#applyPromo').addEventListener('click',()=>{
   const v=$('#promo').value.trim().toUpperCase();
   if(!v){promoCode='';renderCart();return}
-  if(STORE.promos[v]){promoCode=v;renderCart();toast('Code '+v+' appliqué')}
-  else{promoCode='';renderCart();toast('Code promo invalide')}
+  if(STORE.promos[v]){promoCode=v;renderCart();toast(tt(`Code ${v} appliqué`,`تم تطبيق الرمز ${v}`))}
+  else{promoCode='';renderCart();toast(tr('Code promo invalide'))}
 });
 $('#goCheckout').addEventListener('click',openModal);
 $('#mBack').addEventListener('click',openCart);
@@ -711,25 +988,34 @@ $('#form').addEventListener('submit',e=>{
     const bad=k==='phone'?v.replace(/\D/g,'').length<9:v.length<2;
     el.parentElement.classList.toggle('err',bad);if(bad)ok=false;
   });
-  if(!ok){toast('Merci de compléter les champs en rouge');return}
-  const t=totals();
-  const lines=Object.entries(cart).map(([id,q])=>{const p=prod(+id);return `• ${q} × ${p.name} — ${fmt(p.price*q)}`});
-  const msg=[`Bonjour ${STORE.name}, je souhaite passer commande :`,'',...lines,'',
+  if(!ok){toast(tr('Merci de compléter les champs en rouge'));return}
+  const t=totals(),note=$('#fNote').value.trim();
+  const lines=Object.entries(cart).map(([id,q])=>{const p=prod(+id);return `• ${q} × ${pname(p)} — ${fmt(p.price*q)}`});
+  const shipTxt=t.ship===0?tr('Offerte'):fmt(t.ship);
+  const msg=(lang==='ar'?[`مرحبًا ${STORE.name}، أرغب في تقديم الطلب التالي:`,'',...lines,'',
+    `المجموع الفرعي: ${fmt(t.sub)}`,
+    ...(t.disc>0?[`الخصم (${promoCode}): -${fmt(t.disc)}`]:[]),
+    `التوصيل: ${shipTxt}`,
+    `المجموع المطلوب عند الاستلام: ${fmt(t.total)}`,'',
+    `الاسم: ${f.name.value.trim()}`,`الهاتف: ${f.phone.value.trim()}`,`المدينة: ${f.city.value.trim()}`,`العنوان: ${f.addr.value.trim()}`,
+    ...(note?[`ملاحظة: ${note}`]:[])]
+  :[`Bonjour ${STORE.name}, je souhaite passer commande :`,'',...lines,'',
     `Sous-total : ${fmt(t.sub)}`,
     ...(t.disc>0?[`Réduction (${promoCode}) : -${fmt(t.disc)}`]:[]),
-    `Livraison : ${t.ship===0?'Offerte':fmt(t.ship)}`,
+    `Livraison : ${shipTxt}`,
     `TOTAL à payer à la livraison : ${fmt(t.total)}`,'',
     `Nom : ${f.name.value.trim()}`,`Téléphone : ${f.phone.value.trim()}`,`Ville : ${f.city.value.trim()}`,`Adresse : ${f.addr.value.trim()}`,
-    ...($('#fNote').value.trim()?[`Remarque : ${$('#fNote').value.trim()}`]:[])].join('\n');
+    ...(note?[`Remarque : ${note}`]:[])]).join('\n');
   window.open(waBase+'?text='+encodeURIComponent(msg),'_blank');
   cart={};promoCode='';save();renderCart();$('#form').reset();
   $('#mForm').style.display='none';$('#mDone').style.display='';
 });
-renderCart();
+applyLang();
 /* ============ REVEAL ============ */
 const els=document.querySelectorAll('[data-reveal]');
 if(matchMedia('(prefers-reduced-motion: reduce)').matches)els.forEach(e=>e.classList.add('in'));
 else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;t.classList.add('in');io.unobserve(t);t.addEventListener('transitionend',()=>t.style.setProperty('--rd','0ms'),{once:true})}),{threshold:.15,rootMargin:'0px 0px -6% 0px'});els.forEach(e=>io.observe(e))}
+first=false;
 </script>
 
 <script>
@@ -744,7 +1030,7 @@ else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)r
   function setMenu(on){
     document.body.classList.toggle('menu-open',on);
     burger.setAttribute('aria-expanded',on?'true':'false');
-    burger.setAttribute('aria-label',on?'Fermer le menu':'Ouvrir le menu');
+    burger.setAttribute('aria-label',tr(on?'Fermer le menu':'Ouvrir le menu'));
     if(window.__lenis){on?window.__lenis.stop():window.__lenis.start()}
   }
   burger.addEventListener('click',function(){setMenu(!document.body.classList.contains('menu-open'))});
